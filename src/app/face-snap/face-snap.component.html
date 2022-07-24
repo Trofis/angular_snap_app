@@ -1,10 +1,12 @@
 
 <div class="face-snap-card">
-    <p>{{title}}</p>
-    <p>{{description}}</p>
-    <p>{{createdDate}}</p>
-    <p>{{snaps}}</p>
+    <p>{{faceSnap.title}}</p>
+    <p>{{faceSnap.description}}</p>
+    <p>{{faceSnap.createdDate}}</p>
 
-    <img [src]="imageUrl" [alt]="title">
+    <button (click)="onAddSnap()">{{ alreadySnaped == true ? 'Oups snap !' : 'Oh snap !' }}</button>
+    <p>{{faceSnap.snaps}}</p>
+
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
 </div>
 
