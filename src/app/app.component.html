@@ -302,9 +302,13 @@
   }
 </style>
 
-<app-face-snap [faceSnap]="mySnap"></app-face-snap>
+<ul *ngFor="let snap of mySnaps">
+  <li><app-face-snap [faceSnap]="snap" *ngIf="snap.snaps > 5"></app-face-snap></li>
+</ul>
+
+<!-- <app-face-snap [faceSnap]="mySnap" *ngIf="mySnap.snaps > 5"></app-face-snap>
 <app-face-snap [faceSnap]="mySnap1"></app-face-snap>
-<app-face-snap [faceSnap]="mySnap2"></app-face-snap>
+<app-face-snap [faceSnap]="mySnap2"></app-face-snap> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
