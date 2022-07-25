@@ -1,0 +1,7 @@
+div{
+    cursor: pointer;    
+    &:active {
+        transform: translate(1px, 1px);
+        box-shadow: lightgray 0 0 5px;
+    }
+}

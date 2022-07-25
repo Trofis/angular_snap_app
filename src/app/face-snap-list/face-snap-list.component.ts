@@ -1,6 +1,7 @@
 import { FaceSnapsService } from './../services/face-snaps.service';
 import { Component, OnInit } from "@angular/core";
 import { FaceSnap } from "../model/face-snap-model";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,14 @@ import { FaceSnap } from "../model/face-snap-model";
 export class FaceSnapListComponent implements OnInit {
   faceSnaps!: FaceSnap[];
 
-  constructor(private FaceSnapsService: FaceSnapsService){}
+  constructor(private FaceSnapsService: FaceSnapsService, private router: Router){}
 
   ngOnInit() {
     this.faceSnaps = this.FaceSnapsService.getAllFaceSnaps();
+  }
+
+  goToSingleFace(faceId: number): void {
+    this.router.navigateByUrl('/facesnaps/' + faceId)
+    console.log("router")
   }
 }
