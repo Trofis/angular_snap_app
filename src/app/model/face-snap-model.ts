@@ -20,7 +20,7 @@ export class FaceSnap {
     //     public snaps: number,
     //     public imageUrl: string,
     //     public location?: string) { }
-
+    id!: number;
     title!: string;
     description!: string;
     createdDate!: Date;

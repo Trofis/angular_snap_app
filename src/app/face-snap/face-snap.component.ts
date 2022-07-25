@@ -1,3 +1,4 @@
+import { FaceSnapsService } from './../services/face-snaps.service';
 import { FaceSnap } from './../model/face-snap-model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,17 +11,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FaceSnapComponent implements OnInit {
   alreadySnaped!: boolean;
   @Input() faceSnap!: FaceSnap;
+
+  constructor(private FaceSnapsService: FaceSnapsService) { }
+  
   ngOnInit(): void {
     
   }
   
   onAddSnap(): void {
     if (!this.alreadySnaped) {
-      this.faceSnap.snaps += 1;
+      this.FaceSnapsService.SnapUnsnap(this.faceSnap.id, "snap")
       this.alreadySnaped = true;
     }
     else {
-      this.faceSnap.snaps -= 1;
+      this.FaceSnapsService.SnapUnsnap(this.faceSnap.id, "unsnap")
       this.alreadySnaped = false;
     }
       
