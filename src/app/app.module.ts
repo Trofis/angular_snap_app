@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule
   ],
   providers: [
