@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## NG FORM
+
+You have 2 types of form : - template (defined in html) - reactive (defined in TS ) - Observable integration - More way to validate data - Dynamic forms (could evolve throughout the process)
+
+Here we have also the 2-way binding concept which is represented by '[()]', it does mean that your variable is influenced by your TS & also by the HTML form user inputs.
+
+You can create local reference with # which indicates to angular to create a local variable in the html in order to send it out through a method (ex : <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">)
