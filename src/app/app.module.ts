@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,8 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
   ],
   imports: [
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule
   ],
   providers: [
