@@ -305,34 +305,9 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
 
-<script>
-  $scope.promises2 = function () {
-      let promise = Promise.resolve('BLABLA')
-      promise.then((mess) => {
-        console.log('OK 1')
-        return Promise.resolve('BLABLA2')
-          .then(mess => {
-            throw new Error('NOK 1')
-          })
-      })
-        .then(mess => {
-          console.log('OK 2')
-        })
-        .catch(err => {
-          console.log('NOK 2')
-          return err;
-        })
-    }
-</script>
+<!-- ASYNC Exercice (async does not need to be unsubscribed it's automatic) -->
 <!-- <h1>{{ interval$ | async }}</h1> -->
 
-<!-- <ul *ngFor="let snap of mySnaps">
-  <li><app-face-snap [faceSnap]="snap" *ngIf="snap.snaps > 5"></app-face-snap></li>
-</ul> -->
-
-<!-- <app-face-snap [faceSnap]="mySnap" *ngIf="mySnap.snaps > 5"></app-face-snap>
-<app-face-snap [faceSnap]="mySnap1"></app-face-snap>
-<app-face-snap [faceSnap]="mySnap2"></app-face-snap> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->

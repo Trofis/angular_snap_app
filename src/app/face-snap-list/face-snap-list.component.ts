@@ -13,7 +13,7 @@ import { interval, Subject, take, takeUntil, tap } from 'rxjs';
 
 export class FaceSnapListComponent implements OnInit, OnDestroy {
   faceSnaps!: FaceSnap[];
-   private destroy$!: Subject<boolean>
+  private destroy$!: Subject<boolean>
 
   constructor(private FaceSnapsService: FaceSnapsService, private router: Router) { }
   
@@ -24,6 +24,8 @@ export class FaceSnapListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.faceSnaps = this.FaceSnapsService.getAllFaceSnaps();
 
+    // EXO : Strategies to unsubscribe observable
+    
     this.destroy$ = new Subject<boolean>();
 
     // interval(1000).pipe(

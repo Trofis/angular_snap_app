@@ -11,10 +11,10 @@ import { concatMap, mergeMap, delay, exhaustMap, map, switchMap, take, tap } fro
 })
 export class AppComponent implements OnInit {
 
-  // EXO 2
+  // EXO - SUBSCRIBE Observable
   // interval$!: Observable<number>;
   
-  // EXO 3
+  // EXO - SUBSCRIBE PIPE
   // interval$!: Observable<string>;
 
 
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // EXERCICE 1 - Create & subscribe to an Observable
+    // EXO - SUBSCRIBE Observable - Create & subscribe to an Observable
     // const interval$ = interval(1000);
     
     // interval$.subscribe(value => console.log(value));
@@ -37,11 +37,11 @@ export class AppComponent implements OnInit {
 
 
 
-    // EXERCICE 2 - Async (print out infos in dom)
+    // EXO ASYNC - Async (print out infos in dom)
 
     // this.interval$ = interval(1000);
 
-    // EXERCICE 3 - Pipe (bas niveau)
+    // EXO - PIPE (bas niveau)
 
     // this.interval$ = interval(1000).pipe(
     //     filter(value => value % 3 === 0),
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
     //     tap(text => this.logger(text))
     // );
 
-    // Exercice 4 - Observables hauts niveaux
+    // EXO - Observables hauts niveaux
 
     interval(500).pipe(
       take(10),
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
     return color === 'rouge' ? 'red' : 'yellow';
   }
 
-  // EXO 3
+  // EXO - PIPE
   // logger(text: string): void {
   //   console.log(`Log: ${text}`);
 }
