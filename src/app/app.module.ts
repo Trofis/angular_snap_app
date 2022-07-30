@@ -11,6 +11,7 @@ import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component
 import { HeaderComponent } from './header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
     FaceSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    SingleFaceSnapComponent
+    SingleFaceSnapComponent,
+    NewFaceSnapComponent
   ],
   imports: [
     AppRoutingModule,

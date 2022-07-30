@@ -57,4 +57,13 @@ export class FaceSnapsService {
             throw new Error('FaceSnap not found!');
         }
     }
+
+    pushSnap(formValue: { title: string, description: string, imageUrl: string, location?:string}): void{
+        this.faceSnaps.push({
+            ...formValue,
+            createdDate: new Date(),
+            snaps: 0,
+            id: this.faceSnaps.length
+        })
+    }
 }
