@@ -305,22 +305,3 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
 
-<script>
-  $scope.promises2 = function () {
-      let promise = Promise.resolve('BLABLA')
-      promise.then((mess) => {
-        console.log('OK 1')
-        return Promise.resolve('BLABLA2')
-          .then(mess => {
-            throw new Error('NOK 1')
-          })
-      })
-        .then(mess => {
-          console.log('OK 2')
-        })
-        .catch(err => {
-          console.log('NOK 2')
-          return err;
-        })
-    }
-</script>
