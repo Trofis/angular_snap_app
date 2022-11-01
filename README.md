@@ -33,3 +33,7 @@ You have 2 types of form : - template (defined in html) - reactive (defined in T
 Here we have also the 2-way binding concept which is represented by '[()]', it does mean that your variable is influenced by your TS & also by the HTML form user inputs.
 
 You can create local reference with # which indicates to angular to create a local variable in the html in order to send it out through a method (ex : <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">)
+
+## PROXY DEV
+
+In angular JSON add proxy confog to overpass CORS issue ("proxyConfig": "src/proxy.conf.json")

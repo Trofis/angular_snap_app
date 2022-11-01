@@ -2,7 +2,7 @@ import { FaceSnapsService } from './../services/face-snaps.service';
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FaceSnap } from "../model/face-snap-model";
 import { Router } from '@angular/router';
-import { interval, Subject, take, takeUntil, tap } from 'rxjs';
+import { interval, Observable, Subject, take, takeUntil, tap } from 'rxjs';
 
 
 @Component({
@@ -12,12 +12,14 @@ import { interval, Subject, take, takeUntil, tap } from 'rxjs';
 })
 
 export class FaceSnapListComponent implements OnInit {
-  faceSnaps!: FaceSnap[];
+  faceSnaps$!: Observable<Array<FaceSnap>>;
 
   constructor(private FaceSnapsService: FaceSnapsService, private router: Router) { }
 
   ngOnInit() {
-    this.faceSnaps = this.FaceSnapsService.getAllFaceSnaps();
+    this.faceSnaps$ = this.FaceSnapsService.getAllFaceSnaps();
+
+    this.faceSnaps$.subscribe(val => console.log(val));
   }
 
   goToSingleFace(faceId: number): void {

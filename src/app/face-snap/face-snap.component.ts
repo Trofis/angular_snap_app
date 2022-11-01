@@ -11,6 +11,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FaceSnapComponent implements OnInit {
   alreadySnaped!: boolean;
   @Input() faceSnap!: FaceSnap;
+  @Input() buttonText!: String;
+  @Input() _onSnap !: any;
 
   constructor(private FaceSnapsService: FaceSnapsService) { }
   
@@ -18,15 +20,8 @@ export class FaceSnapComponent implements OnInit {
     
   }
   
-  onAddSnap(): void {
-    if (!this.alreadySnaped) {
-      this.FaceSnapsService.SnapUnsnap(this.faceSnap.id, "snap")
-      this.alreadySnaped = true;
-    }
-    else {
-      this.FaceSnapsService.SnapUnsnap(this.faceSnap.id, "unsnap")
-      this.alreadySnaped = false;
-    }
+  onSnap(faceSnapId : number): void {
+    this._onSnap(faceSnapId);
       
   }
 }

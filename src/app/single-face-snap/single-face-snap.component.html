@@ -1,2 +1,2 @@
 <button (click)="goBack()">back</button>
-<app-face-snap [faceSnap]="faceSnap"></app-face-snap>
+<app-face-snap *ngIf="faceSnap$ | async as faceSnap" [faceSnap]="faceSnap" [buttonText]="buttonText" [_onSnap]="onSnap"></app-face-snap>

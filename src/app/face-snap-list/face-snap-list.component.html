@@ -1,3 +1,2 @@
-<div *ngFor="let faceSnap of faceSnaps" (click)="goToSingleFace(faceSnap.id)">
-    <app-face-snap [faceSnap]="faceSnap" class="snap"></app-face-snap>
-</div>
+
+<app-face-snap *ngFor="let faceSnap of faceSnaps$ | async as FaceSnap" [faceSnap]="faceSnap" [buttonText]="buttonText" (click)="goToSingleFace(faceSnap.id)" class="snap"></app-face-snap>

@@ -43,7 +43,8 @@ export class NewFaceSnapComponent implements OnInit {
 );
   }
 
-  addFaceSnap(formValue: { title: string, description: string, imageUrl: string, location?:string}) {
+  addFaceSnap(formValue: { title: string, description: string, imageUrl: string, location?: string }) {
+    console.log("ok");
     this.FaceSnapsService.pushSnap(formValue);
     this.router.navigateByUrl('/facesnaps')
   }
